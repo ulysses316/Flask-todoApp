@@ -1,5 +1,6 @@
-<section class="modal">
+<section class="modal modal-update">
     <div class="modal-form">
+        <h2>Actualizar nota</h2>
         <form method="post" action="">
             <div>
                 <label for="">Titulo</label>
@@ -10,13 +11,9 @@
             </div>
             <textarea name="body" name="" id="" cols="30" rows="10"></textarea>
             <button class="btn-sumit" type="submit">Crear nota</button>
-            <span class="close-modal material-symbols-outlined">
+            <span class="close-modal material-symbols-outlined close-modal-update">
                 close
             </span>
         </form>
     </div>
 </section>
-
-{% block scripts %}
-<script src="{{url_for('static', filename='./scripts/modal.js')}}"></script>
-{% endblock %}

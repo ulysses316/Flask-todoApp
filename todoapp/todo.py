@@ -55,6 +55,30 @@ def get_todo(id, check_author=True):
 
     return post
 
+@bp.route('/<int:id>/update', methods=['GET', 'POST'])
+@login_required
+def update(id):
+    note = get_todo(id)
+
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        error = None
+
+        if not title:
+            error = 'Title is required'
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'UPDATE note SET title = ?, body = ?'
+                ' WHERE id = ?',
+                (title, body, id)
+            )
+            db.commit()
+            return redirect(url_for('index'))
+
 @bp.route('/<int:id>/delete', methods=['GET'])
 @login_required
 def delete(id):
