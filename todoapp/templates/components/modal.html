@@ -1,0 +1,23 @@
+<section class="modal">
+    <div class="modal-form">
+        <h2>Crear nota</h2>
+        <form method="post" action="">
+            <div>
+                <label for="">Titulo</label>
+            </div>
+            <input name="title" type="text">
+            <div>
+                <label for="">Texto</label>
+            </div>
+            <textarea name="body" name="" id="" cols="30" rows="10"></textarea>
+            <button class="btn-sumit" type="submit">Crear nota</button>
+            <span class="close-modal material-symbols-outlined">
+                close
+            </span>
+        </form>
+    </div>
+</section>
+
+{% block scripts %}
+<script src="{{url_for('static', filename='./scripts/modal.js')}}"></script>
+{% endblock %}

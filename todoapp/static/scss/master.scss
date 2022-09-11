@@ -1,0 +1,181 @@
+$black-color: #282828;
+$font-roboto: Roboto, sans-serif;
+$black-card: #333333;
+$bg-modal: rgba(51, 51, 51, 0.64);
+$pink-btn: #FF3492;
+
+body {
+    background-color: $black-color;
+}
+header {
+    background-color: $black-color;
+    height: 4rem;
+    font-weight: 500;
+
+    & nav {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+        & div:nth-child(1) {
+            & img {
+                width: 150px;
+                padding: 0 2em;
+            }
+        }
+        & div:nth-child(2) {
+            padding: 0 2em;
+            & a {
+                margin: 0 1em;
+            }
+        }
+        & a {
+            color: white;
+            font-family: $font-roboto;
+            text-decoration: none;
+            & :visited {
+                color: white;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            gap: 1em;
+        }
+    }
+}
+
+.todo-section {
+    width: 70%;
+    margin: auto;
+
+    & .toogles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0;
+        gap: 2em;
+        span {
+            color: white;
+            font-weight: 600;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+
+    & .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(356px, 1fr));
+        gap: 1em;
+    }
+
+    & .card {
+        background-color: $black-card;
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+        color: white;
+        font-weight: 600;
+        font-family: $font-roboto;
+
+        & .toggles-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em 0;
+            gap: 2em;
+            a,
+            span {
+                color: white;
+                font-weight: 600;
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.modal {
+    position: absolute;    
+    background-color: $bg-modal;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    & h2{
+        font-family: $font-roboto;
+        color: white;
+    }
+
+    & .modal-form {
+        background-color: $black-card;
+        width: 80%;
+        height: 77vh;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2em;
+
+        & div {
+            margin: 1em 0;
+            text-align: left;
+            width: 100%;
+
+            & label {
+                color: white;
+                font-family: $font-roboto;
+                font-weight: 600;
+            }
+        }
+
+        & input, textarea {
+            background-color: $black-color;
+            border: none;
+            outline: 2px solid #282828;
+            outline-offset: 2px;
+            border-radius: 10px;
+            width: 100%;
+            height: 47px;
+            color: white;
+            font-family: $font-roboto;
+        }        
+
+        & textarea{
+            height: 80px;
+            width: calc(100% - 1em);
+            padding: 1em;
+        }
+
+        & .btn-sumit{
+            margin: 1.5em 0;
+            background-color: $pink-btn;
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-family: $font-roboto;
+            padding: 1em 2em;
+            border-radius: 25px;
+            width: 150px;
+            cursor: pointer;
+        }
+
+        & .close-modal{
+            position: absolute;
+            background-color: $pink-btn;
+            top: 5px;
+            right: 5px;
+            color: white;
+            font-weight: 600;
+            border-radius: 50%;            
+            padding: .2em;
+            cursor: pointer;
+        }
+    }
+}

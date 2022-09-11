@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <p style="color: red; text-transform: uppercase;">{{ message }}</p>
+{% endfor %}
+
+<form method="post">
+    <input name="username" placeholder="username" type="text">
+    <input name="password" placeholder="password" type="password">
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}

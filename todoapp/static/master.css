@@ -1,0 +1,162 @@
+body {
+  background-color: #282828;
+}
+
+header {
+  background-color: #282828;
+  height: 4rem;
+  font-weight: 500;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+header nav div:nth-child(1) img {
+  width: 150px;
+  padding: 0 2em;
+}
+header nav div:nth-child(2) {
+  padding: 0 2em;
+}
+header nav div:nth-child(2) a {
+  margin: 0 1em;
+}
+header nav a {
+  color: white;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+}
+header nav a :visited {
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  header nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+.todo-section {
+  width: 70%;
+  margin: auto;
+}
+.todo-section .toogles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  gap: 2em;
+}
+.todo-section .toogles span {
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+}
+.todo-section .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(356px, 1fr));
+  gap: 1em;
+}
+.todo-section .card {
+  background-color: #333333;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  color: white;
+  font-weight: 600;
+  font-family: Roboto, sans-serif;
+}
+.todo-section .card .toggles-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  gap: 2em;
+}
+.todo-section .card .toggles-card a,
+.todo-section .card .toggles-card span {
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal {
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.64);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal h2{
+  font-family: Roboto, sans-serif;
+  color: white;
+}
+
+.modal .modal-form {
+  background-color: #333333;
+  width: 80%;
+  height: 77vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+}
+.modal .modal-form div {
+  margin: 1em 0;
+  text-align: left;
+  width: 100%;
+}
+.modal .modal-form div label {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+}
+.modal .modal-form input, .modal .modal-form textarea {
+  background-color: #282828;
+  border: none;
+  outline: 2px solid #282828;
+  outline-offset: 2px;
+  border-radius: 10px;
+  width: 100%;
+  height: 47px;
+  color: white;
+  font-family: Roboto, sans-serif;
+}
+.modal .modal-form textarea {
+  height: 80px;
+  width: calc(100% - 1em);
+  padding: 1em;
+}
+.modal .modal-form .btn-sumit {
+  margin: 1.5em 0;
+  background-color: #FF3492;
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-family: Roboto, sans-serif;
+  padding: 1em 2em;
+  border-radius: 25px;
+  width: 150px;
+  cursor: pointer;
+}
+.modal .modal-form .close-modal {
+  position: absolute;
+  background-color: #FF3492;
+  top: 5px;
+  right: 5px;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 0.2em;
+  cursor: pointer;
+}

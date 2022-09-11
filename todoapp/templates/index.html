@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}TODO APP{% endblock %}
+{% block content %}
+
+<div class="todo-section">
+    <div class="grid-container">
+        {% for note in notes %}
+        <div class="card">
+            <div class="content">
+                <h3>{{note.title}}</h3>
+                <p>{{note.body}}</p>
+            </div>
+            <div class="toggles-card">
+                <a href="{{note.id}}/delete">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </a>
+                <span class="material-symbols-outlined open-modal-update">
+                    edit
+                </span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
